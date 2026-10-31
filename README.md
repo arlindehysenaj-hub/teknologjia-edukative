@@ -36,10 +36,6 @@ Publikimi i projektit
 
 Projekti është publikuar përmes Replit.
 
-Linku i faqes: [Vendos këtu linkun e faqes së publikuar]
-
-GitHub Repository: [Vendos këtu linkun e GitHub]
-
 Përdorimi i AI
 
 Gjatë realizimit të projektit është përdorur ChatGPT për ndihmë në kuptimin e kodit, organizimin e projektit dhe zgjidhjen e problemeve teknike.
