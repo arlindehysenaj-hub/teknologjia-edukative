@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mëso si teknologjia dhe kompjuterët na ndihmojnë çdo ditë."
+    />
+    <meta name="theme-color" content="#f6f2e8" />
+    <title>Teknologjia dhe Kompjuteri</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2324765e'/%3E%3Ctext x='50' y='68' font-size='62' text-anchor='middle' fill='white' font-family='sans-serif'%3ET%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Teknologjia dhe Kompjuteri, faqja kryesore">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="7" width="28" height="20" rx="4" stroke="currentColor" stroke-width="2.5" />
+              <path d="M14 33h12M20 27v6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+              <path d="m16 14-3 3 3 3m8-6 3 3-3 3m-2-7-4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="brand-name">Teknologjia <span>dhe Kompjuteri</span></span>
+        </a>
+        <span class="header-note"><span class="status-dot" aria-hidden="true"></span> Mëso me kuriozitet</span>
+      </header>
+
+      <section class="learning-card" aria-labelledby="page-title">
+        <div class="card-content">
+          <div class="intro">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Një hap i vogël në botën digjitale</p>
+            <h1 id="page-title">Përshëndetje,<br /><span>eksplorues!</span></h1>
+            <p class="intro-copy">
+              Teknologjia dhe kompjuterët na ndihmojnë të mësojmë gjëra të reja,
+              të gjejmë informacion dhe të komunikojmë me njerëzit kudo që janë.
+              Le të zbulojmë së bashku një pjesë të rëndësishme të kompjuterit.
+            </p>
+          </div>
+
+          <div class="quiz-panel">
+            <div class="quiz-topline">
+              <span class="quiz-label">Pyetja e ditës</span>
+              <span class="question-count" aria-label="Pyetja 1 nga 1">01 <span>/ 01</span></span>
+            </div>
+
+            <form id="quiz-form">
+              <fieldset>
+                <legend>Cila pjesë e kompjuterit quhet “truri” i tij?</legend>
+                <p class="select-hint">Zgjidh një përgjigje:</p>
+                <div class="answer-list">
+                  <label class="answer-option">
+                    <input type="radio" name="answer" value="monitor" />
+                    <span class="answer-letter" aria-hidden="true">A</span>
+                    <span class="answer-text">Monitori</span>
+                    <span class="answer-check" aria-hidden="true"></span>
+                  </label>
+                  <label class="answer-option">
+                    <input type="radio" name="answer" value="procesori" />
+                    <span class="answer-letter" aria-hidden="true">B</span>
+                    <span class="answer-text">Procesori (CPU)</span>
+                    <span class="answer-check" aria-hidden="true"></span>
+                  </label>
+                  <label class="answer-option">
+                    <input type="radio" name="answer" value="tastiere" />
+                    <span class="answer-letter" aria-hidden="true">C</span>
+                    <span class="answer-text">Tastiera</span>
+                    <span class="answer-check" aria-hidden="true"></span>
+                  </label>
+                </div>
+              </fieldset>
+              <button class="check-button" type="submit">
+                <span>Kontrollo përgjigjen</span>
+                <span class="button-arrow" aria-hidden="true">→</span>
+              </button>
+              <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <aside class="visual" aria-label="Ilustrim i një kompjuteri">
+          <div class="sunburst sunburst-one" aria-hidden="true"></div>
+          <div class="sunburst sunburst-two" aria-hidden="true"></div>
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <span class="spark spark-one" aria-hidden="true"></span>
+          <span class="spark spark-two" aria-hidden="true"></span>
+          <span class="spark spark-three" aria-hidden="true"></span>
+          <div class="computer-illustration" aria-hidden="true">
+            <div class="screen-frame">
+              <div class="screen">
+                <div class="screen-top"><i></i><i></i><i></i></div>
+                <div class="screen-art">
+                  <span class="art-sun"></span>
+                  <span class="art-hill hill-back"></span>
+                  <span class="art-hill hill-front"></span>
+                  <span class="art-window"></span>
+                </div>
+              </div>
+            </div>
+            <div class="monitor-neck"></div>
+            <div class="monitor-base"></div>
+            <div class="keyboard">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span class="space-key"></span>
+            </div>
+          </div>
+          <div class="floating-note note-top"><span class="note-dot"></span> Ide të reja</div>
+          <div class="floating-note note-bottom"><span class="note-lines"></span> Gati për të mësuar?</div>
+          <p class="visual-caption">Njohuria hap dyer të reja.</p>
+        </aside>
+      </section>
+
+      <footer class="site-footer">
+        <span>Kurioziteti është fillimi i çdo zbulimi.</span>
+        <span class="footer-mark" aria-hidden="true">T<span>.</span>K</span>
+      </footer>
+    </main>
+  </body>
+</html>
