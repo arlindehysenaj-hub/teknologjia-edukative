@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #203b3d;
+  background: #f6f2e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #203b3d;
+  --muted: #667c77;
+  --paper: #fffdf7;
+  --mint: #c9e9d7;
+  --green: #24765e;
+  --coral: #f48d70;
+  --yellow: #f6cd67;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 8% 10%, rgba(246, 205, 103, .17), transparent 27rem),
+    radial-gradient(ellipse at 93% 86%, rgba(201, 233, 215, .38), transparent 30rem),
+    #f6f2e8;
+}
+
+button, input { font: inherit; }
+a { color: inherit; }
+
+.page-shell {
+  width: min(1120px, calc(100% - 64px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  background: #dceee0;
+  border-radius: 14px;
+}
+
+.brand-mark svg { width: 32px; }
+.brand-name { font: 900 16px/1.1 "Nunito", sans-serif; letter-spacing: -.35px; }
+.brand-name span { display: block; color: var(--green); }
+.header-note { display: flex; align-items: center; gap: 9px; color: #60736d; font-size: 13px; font-weight: 600; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #f19a73; box-shadow: 0 0 0 4px rgba(241,154,115,.15); }
+
+.learning-card {
+  flex: 1;
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: 1.06fr .94fr;
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid rgba(62, 93, 77, .09);
+  border-radius: 28px;
+  box-shadow: 0 22px 65px rgba(67, 83, 62, .09), 0 3px 8px rgba(67, 83, 62, .04);
+  animation: arrive .65s cubic-bezier(.2,.75,.3,1) both;
+}
+
+.card-content { padding: 57px 0 44px 62px; position: relative; z-index: 1; }
+.intro { max-width: 460px; }
+.eyebrow { margin: 0 0 17px; display: flex; align-items: center; gap: 9px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .105em; text-transform: uppercase; }
+.eyebrow-line { width: 24px; height: 2px; border-radius: 3px; background: var(--coral); }
+h1 { margin: 0; color: var(--ink); font: 900 clamp(37px, 4.3vw, 55px)/.99 "Nunito", sans-serif; letter-spacing: -2.3px; }
+h1 span { color: #e57f63; }
+.intro-copy { max-width: 430px; margin: 18px 0 27px; color: #61746f; font-size: 14px; line-height: 1.75; }
+
+.quiz-panel { max-width: 456px; padding-top: 19px; border-top: 1px solid #e9e9dc; }
+.quiz-topline { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.quiz-label { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.question-count { color: #e48264; font: 900 16px "Nunito", sans-serif; }
+.question-count span { color: #9cad9f; font-weight: 700; }
+fieldset { padding: 0; margin: 0; border: 0; }
+legend { width: 100%; color: var(--ink); font: 800 19px/1.32 "Nunito", sans-serif; letter-spacing: -.3px; }
+.select-hint { margin: 7px 0 11px; color: #85948c; font-size: 12px; }
+.answer-list { display: grid; gap: 8px; }
+.answer-option {
+  min-height: 46px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 13px;
+  cursor: pointer;
+  border: 1px solid #e4e8dd;
+  border-radius: 11px;
+  background: #fffefa;
+  color: #3c5853;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+.answer-option:hover { border-color: #9cc9ae; background: #f7fbf4; transform: translateX(2px); }
+.answer-option:focus-within { outline: 3px solid rgba(36,118,94,.22); outline-offset: 2px; }
+.answer-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.answer-letter { width: 27px; height: 27px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 8px; background: #f0f2e8; color: #72847a; font: 800 12px "Nunito", sans-serif; }
+.answer-text { font-size: 13px; font-weight: 600; }
+.answer-check { width: 17px; height: 17px; margin-left: auto; border: 1.5px solid #cbd6c9; border-radius: 50%; }
+.answer-option:has(input:checked) { border-color: #55a37b; background: #eff8ef; }
+.answer-option:has(input:checked) .answer-letter { color: white; background: var(--green); }
+.answer-option:has(input:checked) .answer-check { border: 5px solid var(--green); }
+.check-button { width: 100%; min-height: 48px; margin-top: 14px; padding: 0 16px 0 19px; display: flex; align-items: center; justify-content: space-between; border: 0; border-radius: 11px; background: var(--green); color: white; font-size: 13px; font-weight: 700; cursor: pointer; box-shadow: 0 5px 0 #1a604b; transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease; }
+.check-button:hover { background: #1d6b54; transform: translateY(-1px); box-shadow: 0 6px 0 #1a604b; }
+.check-button:active { transform: translateY(3px); box-shadow: 0 2px 0 #1a604b; }
+.check-button:focus-visible { outline: 3px solid #efaa76; outline-offset: 4px; }
+.button-arrow { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.17); font-size: 19px; line-height: 1; }
+.feedback { min-height: 20px; margin: 10px 0 0; font-size: 13px; font-weight: 700; }
+.feedback:empty { margin-top: 0; min-height: 0; }
+.feedback.success { color: #26714f; }
+.feedback.error { color: #b95240; }
+
+.visual {
+  min-width: 0;
+  min-height: 610px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #e2f0df;
+  isolation: isolate;
+}
+.visual::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .22; background-image: radial-gradient(#5b886e 1px, transparent 1px); background-size: 17px 17px; }
+.sunburst { position: absolute; border-radius: 50%; }
+.sunburst-one { width: 380px; height: 380px; top: 90px; left: 50%; transform: translateX(-50%); background: #d0e8d0; }
+.sunburst-two { width: 280px; height: 280px; top: 140px; left: 50%; transform: translateX(-50%); background: #eaf2d9; }
+.orbit { position: absolute; width: 380px; height: 170px; left: 50%; top: 210px; border: 1px solid rgba(76,135,99,.24); border-radius: 50%; transform: translateX(-50%) rotate(-25deg); }
+.orbit-two { width: 410px; height: 230px; top: 180px; transform: translateX(-50%) rotate(34deg); border-color: rgba(76,135,99,.16); }
+.spark { position: absolute; width: 16px; height: 16px; color: #e78361; background: currentColor; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
+.spark-one { top: 124px; right: 18%; width: 23px; height: 23px; }
+.spark-two { top: 242px; left: 10%; width: 18px; height: 18px; color: #e2b847; }
+.spark-three { top: 389px; right: 13%; width: 13px; height: 13px; color: #398162; }
+.computer-illustration { width: 290px; position: relative; z-index: 2; margin-top: -16px; filter: drop-shadow(0 17px 16px rgba(46,83,65,.13)); }
+.screen-frame { padding: 12px; border: 3px solid #294c49; border-radius: 18px; background: #f8f3df; transform: rotate(-3deg); }
+.screen { height: 183px; overflow: hidden; border: 2px solid #315c55; border-radius: 9px; background: #a9d6c7; }
+.screen-top { height: 19px; padding-left: 8px; display: flex; align-items: center; gap: 4px; background: #f4efd9; }
+.screen-top i { width: 5px; height: 5px; border-radius: 50%; background: #ee8e70; }
+.screen-top i:nth-child(2) { background: #f0c45d; }
+.screen-top i:nth-child(3) { background: #76b48a; }
+.screen-art { position: relative; height: calc(100% - 19px); overflow: hidden; background: linear-gradient(180deg, #a4d9cc 0 52%, #f4d783 52% 100%); }
+.art-sun { position: absolute; top: 19px; right: 38px; width: 41px; height: 41px; border-radius: 50%; background: #f8c35f; }
+.art-hill { position: absolute; bottom: -36px; width: 230px; height: 125px; border-radius: 50% 50% 0 0; }
+.hill-back { left: -32px; background: #6cab83; transform: rotate(-13deg); }
+.hill-front { right: -35px; bottom: -52px; background: #3c8269; transform: rotate(13deg); }
+.art-window { position: absolute; left: 85px; top: 51px; width: 51px; height: 61px; border: 4px solid #fff4db; border-radius: 25px 25px 8px 8px; background: #ee9673; box-shadow: 0 3px 0 rgba(47,89,75,.12); }
+.monitor-neck { width: 36px; height: 31px; margin: -1px auto 0; background: #d8d4bb; border: 2px solid #294c49; border-top: 0; transform: rotate(-3deg); }
+.monitor-base { width: 105px; height: 13px; margin: -2px auto 0; border: 2px solid #294c49; border-radius: 0 0 12px 12px; background: #f5efd9; transform: rotate(-3deg); }
+.keyboard { width: 223px; height: 55px; margin: 15px auto 0; padding: 8px 10px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; border: 2px solid #294c49; border-radius: 9px 9px 14px 14px; background: #f5efd9; transform: rotate(3deg); }
+.keyboard span { height: 7px; border-radius: 2px; background: #8cbba0; box-shadow: 0 1px 0 #5e8a73; }
+.keyboard .space-key { grid-column: 2 / 6; height: 6px; background: #e99673; }
+.floating-note { position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px; padding: 10px 13px; border: 1px solid rgba(58,96,71,.1); border-radius: 10px; background: #fffdf4; color: #416052; font-size: 11px; font-weight: 700; box-shadow: 0 7px 20px rgba(63,99,70,.1); }
+.note-top { top: 145px; left: 8%; transform: rotate(-5deg); }
+.note-bottom { right: 6%; bottom: 146px; transform: rotate(4deg); }
+.note-dot { width: 8px; height: 8px; border-radius: 50%; background: #f18b6d; }
+.note-lines { width: 15px; height: 12px; border-top: 2px solid #77a989; border-bottom: 2px solid #77a989; position: relative; }
+.note-lines::after { content: ""; position: absolute; top: 4px; left: 0; width: 10px; border-top: 2px solid #77a989; }
+.visual-caption { position: absolute; bottom: 42px; margin: 0; color: #65826e; font: 800 13px "Nunito", sans-serif; letter-spacing: .03em; }
+
+.site-footer { min-height: 62px; display: flex; align-items: center; justify-content: space-between; color: #839087; font-size: 11px; }
+.footer-mark { color: #628c70; font: 900 12px "Nunito", sans-serif; letter-spacing: .12em; }
+.footer-mark span { color: #e48264; }
+
+@keyframes arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 850px) {
+  .page-shell { width: min(680px, calc(100% - 38px)); }
+  .learning-card { grid-template-columns: 1fr; }
+  .card-content { padding: 43px 42px 36px; }
+  .intro, .quiz-panel { max-width: none; }
+  .visual { min-height: 410px; }
+  .sunburst-one { top: 34px; }
+  .sunburst-two { top: 84px; }
+  .orbit { top: 153px; }
+  .orbit-two { top: 128px; }
+  .computer-illustration { transform: scale(.82); margin: -23px 0; }
+  .note-top { top: 73px; left: 10%; }
+  .note-bottom { right: 9%; bottom: 88px; }
+  .visual-caption { bottom: 24px; }
+}
+
+@media (max-width: 520px) {
+  .page-shell { width: calc(100% - 24px); }
+  .site-header { height: 75px; }
+  .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
+  .brand-name { font-size: 14px; }
+  .header-note { font-size: 11px; gap: 7px; }
+  .learning-card { border-radius: 21px; }
+  .card-content { padding: 34px 22px 27px; }
+  .eyebrow { font-size: 9px; letter-spacing: .08em; }
+  h1 { font-size: 43px; letter-spacing: -1.8px; }
+  .intro-copy { margin-top: 15px; font-size: 13px; line-height: 1.7; }
+  .quiz-panel { padding-top: 16px; }
+  legend { font-size: 18px; }
+  .visual { min-height: 350px; }
+  .computer-illustration { transform: scale(.69); }
+  .sunburst-one { width: 300px; height: 300px; top: 25px; }
+  .sunburst-two { width: 230px; height: 230px; top: 60px; }
+  .orbit { width: 320px; top: 130px; }
+  .orbit-two { width: 350px; top: 110px; }
+  .note-top { top: 49px; left: 5%; }
+  .note-bottom { right: 3%; bottom: 67px; }
+  .visual-caption { bottom: 16px; font-size: 11px; }
+  .site-footer { min-height: 52px; font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
